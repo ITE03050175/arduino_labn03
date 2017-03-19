@@ -1,0 +1,21 @@
+
+float Analogin=0,Vin;
+
+void setup()
+{ 
+Serial.begin(9600);
+pinMode(A1,INPUT);
+Analogin=0;
+}
+
+
+void loop() 
+{ 
+for(int i=0 ; i<=5;i++ ) 
+Analogin = 0.7*Analogin + 0.3* analogRead(A1);
+
+Vin = Analogin * 5/1024;
+Serial.println(Vin); 
+delay(500);
+ 
+}
